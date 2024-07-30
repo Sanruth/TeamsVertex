@@ -1,0 +1,111 @@
+@keyframes popOut {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.course-item {
+  padding: 10px;
+  /* background-color: #f0f0f0; */
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease; 
+  /* Added transition for scale and shadow */
+  animation: popOut 1.7s ease forwards;
+}
+
+
+.course-item:hover {
+  transform: translateY(-10px);
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course-item a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 23px;
+  font-weight: 600;
+  display: block;
+  position: relative;
+}
+
+.course-item a:hover {
+  text-decoration: none;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden; /* Ensure the image doesn't overflow */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+
+.course-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.course-item a:hover .course-image {
+  transform: scale(1.1);
+  
+   /* Zoom image in to 110% on hover */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease,  background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.course-item a:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 10px;
+}
+
+.course-name {
+  /* color: black; */
+  margin: 10px 0 0 0;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.course-duration {
+  margin: 5px 0;
+  font-size: 28px;
+  color:darkolivegreen;
+  /* color: black; */
+}
